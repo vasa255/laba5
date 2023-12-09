@@ -25,7 +25,8 @@ class Bug:
 
 
 class Backlog:
-    """Return a string representation of the Bug.
+    """
+    Return a string representation of the Bug.
     """
     def __init__(self):
         """Return a string representation of the Bug for debugging.
@@ -33,12 +34,14 @@ class Backlog:
         self.bugs = []
 
     def add_bug(self, bug):
-        """Class representing a backlog of bugs in the bug tracking system.
+        """
+        Class representing a backlog of bugs in the bug tracking system.
         """
         self.bugs.append(bug)
 
     def filter_resolved_by_assignee(self, assignee):
-        """Initialize an empty Backlog instance.
+        """
+        Initialize an empty Backlog instance.
         """
         resolved_bugs = [
             bug
@@ -48,38 +51,39 @@ class Backlog:
         return resolved_bugs
 
     def sort_by_severity(self):
-        """Add a bug to the backlog.
+        """
+        Add a bug to the backlog.
         """
         sorted_bugs = sorted(self.bugs, key=lambda bug: bug.severity, reverse=True)
         return sorted_bugs
 
 
-bug1 = Bug("UI glitch", "Minor", datetime(2023, 12, 1), "RESOLVED", "John")
-bug2 = Bug(
+UI_glitch1 = Bug("UI glitch", "Minor", datetime(2023, 12, 1), "RESOLVED", "John")
+Database_connection_issue1 = Bug(
     "Database connection issue", "Critical", datetime(2023, 11, 15), "OPEN", "Alice"
 )
-bug3 = Bug("Performance problem", "Major", datetime(2023, 12, 5), "RESOLVED", "Bob")
-bug4 = Bug("UI glitch", "Minor", datetime(2023, 12, 1), "RESOLVED", "John")
-bug5 = Bug(
+Performance_problem1 = Bug("Performance problem", "Major", datetime(2023, 12, 5), "RESOLVED", "Bob")
+UI_glitch2 = Bug("UI glitch", "Minor", datetime(2023, 12, 1), "RESOLVED", "John")
+Database_connection_issue2 = Bug(
     "Database connection issue", "Critical", datetime(2023, 11, 15), "OPEN", "Alice"
 )
-bug6 = Bug("Performance problem", "Major", datetime(2023, 12, 5), "RESOLVED", "Bob")
-bug7 = Bug(
+Performance_problem2 = Bug("Performance problem", "Major", datetime(2023, 12, 5), "RESOLVED", "Bob")
+Security_vulnerability = Bug(
     "Security vulnerability", "Critical", datetime(2023, 12, 10), "OPEN", "Charlie"
 )
-bug8 = Bug("Feature not working", "Major", datetime(2023, 11, 20), "RESOLVED", "David")
-bug9 = Bug("Compatibility issue", "Minor", datetime(2023, 11, 25), "OPEN", "Eva")
+Feature_not_working = Bug("Feature not working", "Major", datetime(2023, 11, 20), "RESOLVED", "David")
+Compatibility_issue = Bug("Compatibility issue", "Minor", datetime(2023, 11, 25), "OPEN", "Eva")
 
 backlog = Backlog()
-backlog.add_bug(bug1)
-backlog.add_bug(bug2)
-backlog.add_bug(bug3)
-backlog.add_bug(bug4)
-backlog.add_bug(bug5)
-backlog.add_bug(bug6)
-backlog.add_bug(bug7)
-backlog.add_bug(bug8)
-backlog.add_bug(bug9)
+backlog.add_bug(UI_glitch1)
+backlog.add_bug(Database_connection_issue1)
+backlog.add_bug(Performance_problem1)
+backlog.add_bug(UI_glitch2)
+backlog.add_bug(Database_connection_issue2)
+backlog.add_bug(Performance_problem2)
+backlog.add_bug(Security_vulnerability)
+backlog.add_bug(Feature_not_working)
+backlog.add_bug(Compatibility_issue)
 
 resolved_bugs_bob = backlog.filter_resolved_by_assignee("Bob")
 for bug in resolved_bugs_bob:
