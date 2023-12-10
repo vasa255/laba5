@@ -21,7 +21,8 @@ class Bug:
         return f"""Bug: {self.description}, Severity: {self.severity},
         Deadline: {self.deadline}, Status: {self.status}, Assignee: {self.assignee}"""
     def __repr__(self) -> str:
-        pass
+        return f"""Bug: description={self. description}, severity={self. severit}
+        , Deadline: {self.deadline}, Status: {self.status}, Assignee: {self.assignee}"""
 
 
 class Backlog:
