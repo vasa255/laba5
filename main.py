@@ -59,32 +59,32 @@ class Backlog:
         return sorted_bugs
 
 
-UI_glitch1 = Bug("UI glitch", "Minor", datetime(2023, 12, 1), "RESOLVED", "John")
-Database_connection_issue1 = Bug(
+ui_glitch1 = Bug("UI glitch", "Minor", datetime(2023, 12, 1), "RESOLVED", "John")
+database_connection_issue1 = Bug(
     "Database connection issue", "Critical", datetime(2023, 11, 15), "OPEN", "Alice"
 )
-Performance_problem1 = Bug("Performance problem", "Major", datetime(2023, 12, 5), "RESOLVED", "Bob")
-UI_glitch2 = Bug("UI glitch", "Minor", datetime(2023, 12, 1), "RESOLVED", "John")
-Database_connection_issue2 = Bug(
+performance_problem1 = Bug("Performance problem", "Major", datetime(2023, 12, 5), "RESOLVED", "Bob")
+ui_glitch2 = Bug("UI glitch", "Minor", datetime(2023, 12, 1), "RESOLVED", "John")
+database_connection_issue2 = Bug(
     "Database connection issue", "Critical", datetime(2023, 11, 15), "OPEN", "Alice"
 )
-Performance_problem2 = Bug("Performance problem", "Major", datetime(2023, 12, 5), "RESOLVED", "Bob")
-Security_vulnerability = Bug(
+performance_problem2 = Bug("Performance problem", "Major", datetime(2023, 12, 5), "RESOLVED", "Bob")
+security_vulnerability = Bug(
     "Security vulnerability", "Critical", datetime(2023, 12, 10), "OPEN", "Charlie"
 )
-Feature_not_working = Bug("Feature not working", "Major", datetime(2023, 11, 20), "RESOLVED", "David")
-Compatibility_issue = Bug("Compatibility issue", "Minor", datetime(2023, 11, 25), "OPEN", "Eva")
+feature_not_working = Bug("Feature not working", "Major", datetime(2023, 11, 20), "RESOLVED", "David")
+compatibility_issue = Bug("Compatibility issue", "Minor", datetime(2023, 11, 25), "OPEN", "Eva")
 
 backlog = Backlog()
-backlog.add_bug(UI_glitch1)
-backlog.add_bug(Database_connection_issue1)
-backlog.add_bug(Performance_problem1)
-backlog.add_bug(UI_glitch2)
-backlog.add_bug(Database_connection_issue2)
-backlog.add_bug(Performance_problem2)
-backlog.add_bug(Security_vulnerability)
-backlog.add_bug(Feature_not_working)
-backlog.add_bug(Compatibility_issue)
+backlog.add_bug(ui_glitch1)
+backlog.add_bug(database_connection_issue1)
+backlog.add_bug(performance_problem1)
+backlog.add_bug(ui_glitch2)
+backlog.add_bug(database_connection_issue2)
+backlog.add_bug(performance_problem2)
+backlog.add_bug(security_vulnerability)
+backlog.add_bug(feature_not_working)
+backlog.add_bug(compatibility_issue)
 
 resolved_bugs_bob = backlog.filter_resolved_by_assignee("Bob")
 for bug in resolved_bugs_bob:
